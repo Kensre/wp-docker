@@ -1,0 +1,16 @@
+# add a user for mysql container
+sudo userdel mysql 
+sudo useradd -u 999 mysql
+
+# make directories on the host for mysql container to mount from 
+sudo mkdir -p /data/mysql
+sudo chown -R mysql:mysql /data/mysql
+
+# add a user for the wordpress
+sudo userdel www-data
+sudo useradd -u 82 www-data
+
+# make directory that will used by wordpress 
+sudo mkdir -p /data/html
+sudo chown -R www-data:www-data /data/html
+

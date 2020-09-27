@@ -1,7 +1,8 @@
 verion: '3'
 
 services:
-  mysql:
+ 
+ mysql:
     image: mariadb
     volumes:
       - /data/mysql:/var/lib/mysql
@@ -11,7 +12,8 @@ services:
       MYSQL_USER: user_name
       MYSQL_PASSWORD: user_pass
     restart: always
-  wordpress:
+ 
+ wordpress:
     image: wordpress:php7.3-fpm-alpine
     volumes:
       - /data/html:/var/www/html
@@ -26,7 +28,8 @@ services:
     links:
       - mysql
     restart: always
-  nginx:
+ 
+ nginx:
     image: nginx:alpine
     volumes:
       - ./nginx:/etc/nginx/conf.d
